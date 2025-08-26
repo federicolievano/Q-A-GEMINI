@@ -44,5 +44,5 @@ class TestConfig:
 
     def test_validate_with_api_key(self, monkeypatch):
         """Test que verifica la validación con API key."""
-        monkeypatch.setenv("GOOGLE_API_KEY", "test_key")
+        monkeypatch.setattr(Config, "GOOGLE_API_KEY", "test_key")
         assert Config.validate() is True 
